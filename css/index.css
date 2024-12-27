@@ -1,0 +1,340 @@
+/* Sidebar responsif */
+.sidebar {
+    height: 100%;
+    background-color: #FFF;
+    padding-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0); /* Sidebar tersembunyi */
+}
+
+.card-header{
+    background-color: white !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sidebar tampil di layar besar */
+@media (min-width: 768px) {
+    .sidebar {
+        transform: translateX(0);
+        position: relative;
+    }
+}
+
+/* Sidebar muncul saat ditampilkan */
+.sidebar.active {
+    transform: translateX(-100%); /* Sidebar tampil */
+    width: 0px;
+    visibility: hidden;
+}
+
+/* Hamburger di main-content-header */
+.main-content-header .hamburger {
+    display: none;
+}
+
+.main-content-header.active .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.main-content-header.active .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Tampilkan hamburger hanya di layar kecil */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .main-content-header .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .main-content-header .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #FFF;
+        margin: 3px 0;
+        transition: 0.3s;
+    }
+}
+/* Sidebar header with logo and menu */
+.sidebar-header {
+    width: 100%;
+    height: 60px;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: black;
+}
+
+/* Logo styling */
+.sidebar-header .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #FFF
+}
+
+/* Hamburger menu icon styling */
+.menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+/* Show menu icon on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+.sidebar .line {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, .09);
+}
+
+/* Circle container styling */
+.icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    background-color: #d3d3d3; /* Light gray background */
+    border-radius: 50%; /* Make it circular */
+}
+
+/* SVG icon styling */
+.icon-circle svg {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    fill: #4f4f4f; /* Dark gray color for the icon */
+}
+
+.sidebar .nav-link {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.sidebar .nav-link.active {
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+}
+
+.sidebar .nav-header {
+    margin: 1rem;
+    color: rgba(0, 0, 0, .5);
+    font-weight: bold;
+}
+
+.main-content {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+
+.main-content-header {
+    width: 100%;
+    height: 60px;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+    color: black;
+    box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-header {
+    background: linear-gradient(to right, #007bff, #004a9f);
+    color: #fff;
+    /*padding: 32px 24px;*/
+    padding: 0px 24px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dashboard-header h3 {
+    font-size: 24px;
+}
+
+.dashboard-header p {
+    color: rgba(255, 255, 255, .7);
+}
+
+.container {
+    position: absolute;
+    top: 160px;
+}
+
+.card2 {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    max-height: 100px;
+    margin: 10px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.card2-body {
+    display: flex;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.card2-icon {
+    padding: 5px;
+    font-size: 2rem;
+    color: white;
+    margin-right: 15px;
+    width: 50px; /* Tentukan lebar */
+    height: 50px; /* Tentukan tinggi yang sama dengan lebar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Opsional: Menambahkan radius jika ingin kotak dengan sudut melengkung */
+}
+
+.card2-content {
+    text-align: left;
+}
+
+.card2-title {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+}
+
+.card2-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 576px) {
+    .card2 {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .card2-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+
+    .card2-title {
+        font-size: 1rem;
+    }
+
+    .card2-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsif untuk layar besar */
+@media (min-width: 992px) {
+    .card2 {
+        max-width: 400px;
+    }
+}
+
+
+.icon {
+    font-size: 2rem;
+}
+
+/* Font */
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-extra-bold {
+    font-weight: 900;
+}
+
+.text-xs {
+    font-size: 0.75rem; /* 12px */
+    line-height: 1rem; /* 16px */
+}
+.text-sm {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+}
+.text-base {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+}
+.text-lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+}
+.text-xl {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+}
+.text-2xl {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+}
+.text-3xl {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+}
+.text-4xl {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+}
+.text-5xl {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+}
+
+.text-primary {
+    color : gray;
+}

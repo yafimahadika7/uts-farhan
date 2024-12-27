@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMBAH DIVISI </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/d4a890d065.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" src="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-md-2 p-0 sidebar shadow-lg" id="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <span class="font-light text-lg">Universitas</span>
+                        <span class="font-extra-bold text-lg">Pamulang</span>
+                    </div>
+                    <!-- Hamburger Menu Icon -->
+                    <div class="menu" onclick="toggleSidebar()">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="text-center my-3 d-flex px-3 align-items-center">
+                    <div class="icon-circle me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                    </div>
+                    <div class="d-flex flex-column align-items-start text-sm">
+                        <span class="text-black-50">Welcome, Fausta</span>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+                <div class="px-3 my-3"><div class="line"></div></div>
+                <nav class="nav flex-column px-3">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa-solid fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <p class="nav-header">Menu Karyawan</p>
+                    <a class="nav-link" href="karyawan.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Karyawan</span>
+                    </a>
+                    <a class="nav-link" href="jabatan.html">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Jabatan</span>
+                    </a>
+                    <a class="nav-link active" href="divisi.html">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Divisi</span>
+                    </a>
+                    <p class="nav-header">Menu Absensi</p>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Absensi</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                        <span>Izin</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                        <span>Lembur</span>
+                    </a>
+                    <p class="nav-header">MENU PENGGAJIAN</p>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-money-bill-1-wave"></i>
+                        <span>Slip Gaji</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-file-arrow-up"></i>
+                        <span>Cetak Slip Gaji</span>
+                    </a>
+                    <p class="nav-header">MENU LAPORAN</p>
+                    <a class="nav-link" href="#">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <span>Cetak Laporan</span>
+                    </a>
+                    <p class="nav-header">MENU ADMIN</p>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-users-gear"></i>
+                        <span>Pengguna</span>
+                    </a>
+                    <a class="btn btn-primary" href="#">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content col-md-10 p-0" id="main-content">
+                <div class="main-content-header" id="main-content-header">
+                    <div class="hamburger" onclick="toggleSidebar()">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="icon-circle me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="content-header">
+                    <div class="container-fluid">
+                      <div class="row mb-2">
+                        <div class="col-sm-6">
+                          <p class="mt-4"><b>Forms</b> | <i class="nav-icon fas fa-home"></i> > Divisi > Tambah Data Divisi</p>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                  </div>
+                  <section class="content">
+                    <div class="container-fluid">
+                      <div class="card">
+                          <div class="card-header">
+                              <h5 class="card-title">Tambah Data divisi</h5>
+                          </div>
+                          <div class="card-body">
+                              <form>
+                                  <div class="mb-3">
+                                    <label for="nama_divisi" class="form-label">Nama divisi</label>
+                                    <input type="text" class="form-control" id="nama_divisi">
+                                  </div>
+                                  <button type="submit" class="btn btn-success"><i class="nav-icon fas fa-save"></i> SIMPAN</button>
+                                  <button type="submit" class="btn btn-danger"><i class="nav-icon fas fa-redo"></i> BATAL</button>
+                                </form>
+                          </div>
+                        </div>
+                    </div>
+                  </section>
+            </div>
+        </div>
+    </div>
+    <script>
+        new DataTable('#example');
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    </script>
+</body>
+</html>
